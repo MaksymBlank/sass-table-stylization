@@ -1,0 +1,107 @@
+.responsive-table-name {
+  color: grey;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 300; }
+
+.responsive-table-name-title {
+  text-align: center;
+  text-transform: uppercase; }
+
+.responsive-table-price {
+  color: blue;
+  text-transform: capitalize;
+  font-weight: 300; }
+
+.responsive-table-price-title {
+  text-transform: capitalize; }
+
+.responsive-table-current-price {
+  color: #232323;
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: 300; }
+
+.responsive-table-current-price-title {
+  text-align: center;
+  text-transform: capitalize; }
+
+.responsive-table-status {
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: 300; }
+
+.responsive-table-status-title {
+  text-align: center;
+  text-transform: capitalize; }
+
+.responsive-table-type {
+  color: red;
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: 300; }
+
+.responsive-table-type-title {
+  text-align: center;
+  text-transform: capitalize; }
+
+.responsive-table-date {
+  color: green;
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: 300; }
+
+.responsive-table-date-title {
+  text-align: center;
+  text-transform: capitalize; }
+
+.responsive-table-info {
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: 300; }
+
+.responsive-table-info-title {
+  text-align: center;
+  text-transform: capitalize; }
+
+@media (max-width: 768px) {
+  .responsive-table-current-price {
+    display: none; }
+  .responsive-table-current-price-title {
+    display: none; } }
+
+@media (max-width: 768px) {
+  .responsive-table-date {
+    display: none; }
+  .responsive-table-date-title {
+    display: none; } }
+
+@media (max-width: 575px) {
+  .responsive-table-type {
+    display: none; }
+  .responsive-table-type-title {
+    display: none; } }
+
+@media (max-width: 575px) {
+  .responsive-table-info {
+    display: none; }
+  .responsive-table-info-title {
+    display: none; } }
+
+@media (max-width: 400px) {
+  .responsive-table-name {
+    text-align: left; }
+  .responsive-table-name-title {
+    text-align: left; } }
+
+@media (max-width: 400px) {
+  .responsive-table-price {
+    text-align: left; }
+  .responsive-table-price-title {
+    text-align: left; } }
+
+@media (max-width: 400px) {
+  .responsive-table-status {
+    display: none; }
+  .responsive-table-status-title {
+    display: none; } }

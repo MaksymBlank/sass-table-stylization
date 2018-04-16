@@ -1,0 +1,151 @@
+// @param {map} $options - default settings for responsive table (table_name , properties..) See documentation..
+// @param {map} $styles - map of styles that will be set to the current class
+// @param {number} $media_query - media(max-width) parameter
+
+@mixin _responsive_table($options, $styles, $media_query: null){
+    $required_prop: (table_name, properties);
+
+    // If required parameter is missing, sends warning message
+    @each $prop in $required_prop{
+        @if not map-get($options, $prop){
+            @warn "'#{$prop}' option is required";
+        }
+    }
+
+    // Defines local vars
+
+    $table_name: map-get($options, table_name);
+    $table_set_title: map-get($options, table_set_title);
+    $forbidden_properties: map-get($options, title_properties_no_show);
+    $properties: map-get($options, properties);
+
+    $table_properties: map-keys($styles);
+
+    @each $table_property in $table_properties{
+
+        @if($media_query){
+            @media(max-width: $media_query + 'px') {
+                .#{$table_name}-#{$table_property}{
+
+                    $values: map-get($styles, $table_property);
+                    // If properties are not equals, sends warning message
+    
+                    @if (length($properties) < length($values)){
+                        @warn ("Length of properties must equals or be less than lenght of table_properties.");
+                    }
+    
+                    $i: 1;
+                    @each $prop in $properties{
+    
+                        $value: null;
+    
+                        @if(length($values) < $i){
+                            $value: null;
+                        } @else{
+                            $value: nth($values, $i);
+                        }
+    
+                        #{$prop}: $value;
+    
+                        $i: $i + 1;
+                    }
+                }
+    
+                // If table_set_title equals true and $forbidden_properties has been defined it will check if current property exist in list
+    
+                @if($table_set_title){
+                    .#{$table_name}-#{$table_property}-title{
+    
+                        $values: map-get($styles, $table_property);
+                        // If properties are not equals, sends warning message
+    
+                        @if (length($properties) < length($values)){
+                            @warn ("Length of properties must equals or be less than lenght of table_properties.");
+                        }
+    
+                        $i: 1;
+                        @each $prop in $properties{
+    
+                            $value: null;
+    
+                            @if(length($values) < $i){
+                                $value: null;
+                            } @else{
+                                $value: nth($values, $i);
+                            }
+    
+                            // If property was forbidden, misses it
+    
+                            @if($forbidden_properties == null or index($forbidden_properties, $prop)==null){
+                                #{$prop}: $value;
+                            }
+    
+                            $i: $i + 1;
+                        }
+                    }
+                }
+            }
+        } @else{
+            .#{$table_name}-#{$table_property}{
+
+                $values: map-get($styles, $table_property);
+                // If properties are not equals, sends warning message
+
+                @if (length($properties) < length($values)){
+                    @warn ("Length of properties must equals or be less than lenght of table_properties.");
+                }
+
+                $i: 1;
+                @each $prop in $properties{
+
+                    $value: null;
+
+                    @if(length($values) < $i){
+                        $value: null;
+                    } @else{
+                        $value: nth($values, $i);
+                    }
+
+                    #{$prop}: $value;
+
+                    $i: $i + 1;
+                }
+            }
+
+            // If table_set_title equals true and $forbidden_properties has been defined it will check if current property exist in list
+
+            @if($table_set_title){
+                .#{$table_name}-#{$table_property}-title{
+
+                    $values: map-get($styles, $table_property);
+                    // If properties are not equals, sends warning message
+
+                    @if (length($properties) < length($values)){
+                        @warn ("Length of properties must equals or be less than lenght of table_properties.");
+                    }
+
+                    $i: 1;
+                    @each $prop in $properties{
+
+                        $value: null;
+
+                        @if(length($values) < $i){
+                            $value: null;
+                        } @else{
+                            $value: nth($values, $i);
+                        }
+
+                        // If property was forbidden, misses it
+
+                        @if($forbidden_properties == null or index($forbidden_properties, $prop)==null){
+                            #{$prop}: $value;
+                        }
+
+                        $i: $i + 1;
+                    }
+                }
+            }
+        }
+        
+    }
+}

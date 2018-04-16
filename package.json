@@ -1,0 +1,13 @@
+{
+  "name": "sass_table_stylization",
+  "version": "1.0.0",
+  "description": "SASS mixin to simplify the styling of the table",
+  "author": "Maksym Blank",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.23.6",
+    "gulp": "^3.9.1",
+    "gulp-pug": "^4.0.1",
+    "gulp-sass": "^4.0.1"
+  }
+}

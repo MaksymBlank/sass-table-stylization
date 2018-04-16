@@ -1,0 +1,46 @@
+@import './../../../_sass_table_stylization';
+
+// Setting options for creating responsive table
+$options: (
+            table_name: 'responsive-table',
+            table_set_title: true,
+            properties: ('display', 'color', 'text-align', 'text-transform', 'font-weight'),
+            title_properties_no_show: ('color', 'font-weight')
+            
+            );
+            
+// Setting styles for all devices
+$styles_default:(
+                name: (null,grey, center, uppercase, 300),
+                price: (null, blue, null, capitalize, 300),
+                current-price: (null, #232323, center, capitalize, 300),
+                status: (null, null, center, capitalize, 300),
+                type: (null, red, center, capitalize, 300),
+                date: (null, green, center, capitalize, 300),
+                info: (null, null, center, capitalize, 300)
+                );
+
+// Setting styles for devices <768px
+$styles_large:  (
+                current-price: (none),
+                date: (none)
+                );
+
+// Setting styles for devices <575px
+$styles_medium: (
+                type: (none),
+                info: (none)
+                );
+
+// Setting styles for devices <400px
+$styles_small:  (
+                name: (null, null, left),
+                price: (null, null, left),
+                status: (none)
+                );
+
+
+@include _responsive_table($options, $styles_default);
+@include _responsive_table($options, $styles_large, 768);
+@include _responsive_table($options, $styles_medium, 575);
+@include _responsive_table($options, $styles_small, 400);

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+
+        link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css")
+        link(rel="stylesheet", href="css/main.css")
+
+        title Responsible table testing..
+    body
+        .container
+            .card.mt-3
+                .card-title.pt-3 
+                    h1.text-center Responsible table example
+                .card-body
+                    table.table
+                        thead
+                            tr
+                                th.responsive-table-index.title #
+                                th.responsive-table-name-title Name
+                                th.responsive-table-price-title Price
+                                th.responsive-table-current-price-title Current price
+                                th.responsive-table-status-title Status
+                                th.responsive-table-type-title Type
+                                th.responsive-table-date-title Date
+                                th.responsive-table-info-title Info
+                        tbody
+                            each item in [1,2,3,4,5,6]
+                                tr
+                                    td.responsive-table-index= item
+                                    td.responsive-table-name= 'name ' + item
+                                    td.responsive-table-price= 'price ' + item
+                                    td.responsive-table-current-price= 'current price ' + item
+                                    td.responsive-table-status= 'status ' + item
+                                    td.responsive-table-type= 'type ' + item
+                                    td.responsive-table-date= 'date ' + item
+                                    td.responsive-table-info= 'info ' + item
+                                    
+
+                    
