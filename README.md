@@ -121,6 +121,68 @@ $media_query<code>:number</code> - max-width breakpoints for @media()
 }
 ```
 
+### Example with 'title'
+
+>Set parameter <code>table_set_title</code> if you want to create special classes for titles (.<code>table_name</code>-<code>styles_map_key</code>-title)
+
+```scss
+$options:   (
+            table_name: 'responsive-table',
+            table_set_title: true, // Creates special classes for titles
+            properties: ('display', 'color', 'text-align'),
+            title_properties_no_show: ('color') // Ignore color property for titles
+            );
+
+$styles:    (
+            name: (null, grey, center),
+            price: (null, blue, null),
+            status: (null, null, center)
+            );
+
+$media_query: null // Making styles for all devices
+
+@include _responsive_table($options, $styles, $media_query);
+
+// OUTPUT
+/*
+    .responsive-table-name{
+        // display is missing because it equals null
+        color: grey;
+        text-align: center;
+    }
+
+    .responsive-table-name-title{
+        // display is missing because it equals null
+        // color: grey; color is ignored due to "title_properties_no_show"
+        text-align: center;
+    }
+
+    .responsive-table-price{
+        // display is missing because it equals null
+        color: grey;
+        // text-align is missing because it equals null
+    }
+
+    // .responsive-table-price-title{
+    //    display is missing because it equals null
+    //    color is ignored due to "title_properties_no_show"
+    //    text-align is missing because it equals null
+    // }
+
+    .responsive-table-status{
+        // display is missing because it equals null
+        // color is missing because it equals null
+        text-align: center;
+    }
+
+    .responsive-table-status-title{
+        // display is missing because it equals null
+        // color is missing because it equals null
+        text-align: center;
+    }
+*/
+```
+
 # Contribute
 Please file an issue if you think something could be improved. Please submit Pull Requests when ever possible.
 
