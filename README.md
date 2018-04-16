@@ -33,8 +33,7 @@ Simply download the _sass_table_stylization.scss file from this repo and place i
 curl
 
 ```js
-curl -O 
-https://raw.githubusercontent.com/MaksymBlank/sass-table-stylization/master/_sass_table_stylization.scss
+curl -O https://raw.githubusercontent.com/MaksymBlank/sass-table-stylization/master/_sass_table_stylization.scss
 ```
 
 wget
