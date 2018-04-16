@@ -1,9 +1,15 @@
 {
   "name": "sass-table-stylization",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "SASS mixin to simplify the styling of the table",
   "author": "Maksym Blank",
   "license": "ISC",
+  "keywords": [
+    "table",
+    "responsive",
+    "sass",
+    "mixins"
+  ],
   "devDependencies": {
     "browser-sync": "^2.23.6",
     "gulp": "^3.9.1",

@@ -1,0 +1,23 @@
+{
+  "name": "sass-table-stylization",
+  "description": "SASS mixin to simplify the styling of the table",
+  "main": "",
+  "authors": [
+    "Maksym Blank"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "table",
+    "responsive",
+    "sass",
+    "mixins"
+  ],
+  "homepage": "https://github.com/MaksymBlank/sass-table-stylization",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
